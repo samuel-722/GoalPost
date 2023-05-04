@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+        .grid-container
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100vh;
+        }
+        .left-side
+        {
+            background-color: #56567D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .right-side
+        {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #website-name
+        {
+            font-size: 30vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .card
+        {
+            flex-basis: 30%;
+            margin: 20px;
+            background-color: #F9F9F9;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .class-key
+        {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .class-value
+        {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 0 20px 20px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DVC GoalPost </title>
+
+</head>
+<body>
+    <div class = "grid-container">
+        <div class="left-side">
+            <h1 id="website-name">Goal Post</h1>
+        </div>
+        <div class="right-side">
+            {% for key, value in my_dict.items %}
+                <div class="card">
+                    <h2 class="class-key"> {{ key }}</h2>
+                    <hr>
+                    <p class="class-value"> {{ value }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
